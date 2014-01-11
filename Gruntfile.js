@@ -363,6 +363,7 @@ module.exports = function (grunt) {
         'gh-pages': {
             options: {
                 base: 'dist',
+                branch: 'master',
                 repo: 'https://github.com/openholisticdevelopment/openholisticdevelopment.github.io.git'
             },
             src: ['**']
@@ -389,21 +390,6 @@ module.exports = function (grunt) {
         grunt.task.run(['serve']);
     });
 
-    grunt.registerTask('test', function (target) {
-        if (target !== 'watch') {
-            grunt.task.run([
-                'clean:server',
-                'concurrent:test',
-                'autoprefixer',
-            ]);
-        }
-
-        grunt.task.run([
-            'connect:test',
-            'mocha'
-        ]);
-    });
-
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
@@ -420,7 +406,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'newer:jshint',
-        'test',
         'build'
     ]);
 
