@@ -1,2 +1,0 @@
-openholisticdevelopment.github.io
-=================================
