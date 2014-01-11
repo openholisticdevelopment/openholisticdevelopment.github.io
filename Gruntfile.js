@@ -104,9 +104,7 @@ module.exports = function (grunt) {
                     {
                         dot: true,
                         src: [
-                            '.tmp',
-                            '<%= yeoman.dist %>/*',
-                            '!<%= yeoman.dist %>/.git*'
+                            '.tmp'
                         ]
                     }
                 ]
@@ -222,8 +220,8 @@ module.exports = function (grunt) {
             options: {
                 assetsDirs: ['<%= yeoman.dist %>']
             },
-            html: ['<%= yeoman.dist %>/{,*/}*.html'],
-            css: ['<%= yeoman.dist %>/styles/{,*/}*.css']
+            html: ['index.html', 'love/{,*/}*.html'],
+            css: ['styles/{,*/}*.css']
         },
 
         // The following *-min tasks produce minified files in the dist folder
@@ -358,14 +356,6 @@ module.exports = function (grunt) {
                 'imagemin',
                 'svgmin'
             ]
-        },
-
-        'gh-pages': {
-            options: {
-                base: 'dist',
-                repo: 'https://github.com/openholisticdevelopment/openholisticdevelopment.github.io.git'
-            },
-            src: ['**']
         }
     });
 
@@ -411,9 +401,7 @@ module.exports = function (grunt) {
         'autoprefixer',
         'concat',
         'cssmin',
-        'uglify',
         'copy:dist',
-        'modernizr',
         'usemin',
         'htmlmin'
     ]);
@@ -422,9 +410,5 @@ module.exports = function (grunt) {
         'newer:jshint',
         'test',
         'build'
-    ]);
-
-    grunt.registerTask('push', [
-        'gh-pages'
     ]);
 };
