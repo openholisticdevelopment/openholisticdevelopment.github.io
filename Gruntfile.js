@@ -363,11 +363,7 @@ module.exports = function (grunt) {
         'gh-pages': {
             options: {
                 base: 'dist',
-                repo: 'https://github.com/openholisticdevelopment/openholisticdevelopment.git',
-                user: {
-                    name: 'Nikolay Georgiev',
-                    email: 'nikolay@georgiev.cc'
-                }
+                repo: 'https://github.com/openholisticdevelopment/openholisticdevelopment.github.io.git'
             },
             src: ['**']
         }
